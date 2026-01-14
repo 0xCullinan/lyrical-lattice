@@ -1,0 +1,285 @@
+{
+  "romance_domain": {
+    "sugar": {
+      "surface": "sweetener",
+      "hidden": "affection/intimacy",
+      "context_keywords": ["baby", "love", "sweet", "honey", "need"]
+    },
+    "cherry": {
+      "surface": "fruit",
+      "hidden": "innocence/virginity",
+      "context_keywords": ["pop", "sweet", "red", "first", "lose"]
+    },
+    "honey": {
+      "surface": "sweetener",
+      "hidden": "term of endearment/attractiveness",
+      "context_keywords": ["baby", "sweet", "love", "drip"]
+    },
+    "peach": {
+      "surface": "fruit",
+      "hidden": "attractive body part",
+      "context_keywords": ["sweet", "juicy", "soft", "bottom"]
+    },
+    "juicy": {
+      "surface": "moist/wet",
+      "hidden": "provocative/scandalous",
+      "context_keywords": ["story", "secret", "gossip", "details"]
+    },
+    "hot": {
+      "surface": "high temperature",
+      "hidden": "attractive/arousing",
+      "context_keywords": ["body", "night", "girl", "boy", "look"]
+    },
+    "wet": {
+      "surface": "containing water",
+      "hidden": "aroused",
+      "context_keywords": ["dream", "night", "wild", "rain"]
+    },
+    "come": {
+      "surface": "arrive",
+      "hidden": "orgasm",
+      "context_keywords": ["together", "hard", "fast", "close"]
+    },
+    "ride": {
+      "surface": "travel on vehicle",
+      "hidden": "sexual activity",
+      "context_keywords": ["wild", "hard", "long", "night", "slow"]
+    },
+    "bang": {
+      "surface": "loud noise",
+      "hidden": "sexual intercourse",
+      "context_keywords": ["hard", "loud", "night", "wall"]
+    }
+  },
+  "substance_domain": {
+    "rock": {
+      "surface": "stone",
+      "hidden": "crack cocaine/diamonds",
+      "context_keywords": ["hard", "sell", "cook", "ice", "bling"]
+    },
+    "blow": {
+      "surface": "wind/breath",
+      "hidden": "cocaine",
+      "context_keywords": ["white", "snow", "line", "nose", "party"]
+    },
+    "high": {
+      "surface": "elevated",
+      "hidden": "intoxicated",
+      "context_keywords": ["feel", "get", "stay", "so", "flying"]
+    },
+    "loaded": {
+      "surface": "full/carrying",
+      "hidden": "wealthy/intoxicated/armed",
+      "context_keywords": ["gun", "money", "drunk", "question"]
+    },
+    "stoned": {
+      "surface": "pelted with rocks",
+      "hidden": "intoxicated (marijuana)",
+      "context_keywords": ["smoke", "high", "chill", "mellow"]
+    },
+    "baked": {
+      "surface": "cooked in oven",
+      "hidden": "intoxicated (marijuana)",
+      "context_keywords": ["cookies", "high", "fried", "toasted"]
+    },
+    "lit": {
+      "surface": "illuminated",
+      "hidden": "intoxicated/exciting",
+      "context_keywords": ["party", "turn", "get", "so", "fire"]
+    },
+    "fire": {
+      "surface": "flames",
+      "hidden": "excellent/dismiss from job",
+      "context_keywords": ["track", "beat", "bars", "spit", "you're"]
+    },
+    "ice": {
+      "surface": "frozen water",
+      "hidden": "diamonds/meth/coldness",
+      "context_keywords": ["bling", "chain", "cold", "wrist", "neck"]
+    },
+    "snow": {
+      "surface": "precipitation",
+      "hidden": "cocaine",
+      "context_keywords": ["white", "blow", "flake", "winter", "pure"]
+    },
+    "pipe": {
+      "surface": "tube",
+      "hidden": "smoking device/gun",
+      "context_keywords": ["smoke", "hit", "crack", "peace"]
+    },
+    "joint": {
+      "surface": "connection point",
+      "hidden": "marijuana cigarette",
+      "context_keywords": ["roll", "smoke", "pass", "light", "hit"]
+    },
+    "grass": {
+      "surface": "lawn plants",
+      "hidden": "marijuana",
+      "context_keywords": ["smoke", "green", "roll", "bag"]
+    },
+    "pot": {
+      "surface": "container",
+      "hidden": "marijuana",
+      "context_keywords": ["smoke", "green", "stash", "bag"]
+    },
+    "weed": {
+      "surface": "unwanted plant",
+      "hidden": "marijuana",
+      "context_keywords": ["smoke", "green", "loud", "gas", "pack"]
+    },
+    "crack": {
+      "surface": "fracture",
+      "hidden": "cocaine/joke",
+      "context_keywords": ["rock", "pipe", "fiend", "joke", "up"]
+    },
+    "dope": {
+      "surface": "stupid",
+      "hidden": "drugs/excellent",
+      "context_keywords": ["that's", "so", "sick", "fiend", "dealer"]
+    },
+    "smack": {
+      "surface": "hit/kiss",
+      "hidden": "heroin",
+      "context_keywords": ["talk", "hit", "needle", "nod"]
+    }
+  },
+  "music_street_domain": {
+    "bars": {
+      "surface": "rods/pubs",
+      "hidden": "rap lyrics/prison",
+      "context_keywords": ["spit", "drop", "write", "behind", "cell"]
+    },
+    "flow": {
+      "surface": "movement of liquid",
+      "hidden": "rap delivery style",
+      "context_keywords": ["sick", "crazy", "smooth", "tight", "switch"]
+    },
+    "heat": {
+      "surface": "warmth",
+      "hidden": "firearms/pressure",
+      "context_keywords": ["pack", "bring", "feel", "police", "street"]
+    },
+    "piece": {
+      "surface": "portion",
+      "hidden": "firearm",
+      "context_keywords": ["pack", "carry", "pull", "chrome", "nine"]
+    },
+    "strap": {
+      "surface": "band/strip",
+      "hidden": "firearm",
+      "context_keywords": ["pack", "carry", "tuck", "on", "keep"]
+    },
+    "tool": {
+      "surface": "implement",
+      "hidden": "firearm",
+      "context_keywords": ["pack", "use", "pull", "work"]
+    },
+    "iron": {
+      "surface": "metal/appliance",
+      "hidden": "firearm",
+      "context_keywords": ["pump", "pack", "press", "hot"]
+    },
+    "beef": {
+      "surface": "meat",
+      "hidden": "conflict/dispute",
+      "context_keywords": ["got", "start", "squash", "settle", "with"]
+    },
+    "green": {
+      "surface": "color",
+      "hidden": "money/marijuana",
+      "context_keywords": ["paper", "get", "chase", "smoke", "bag"]
+    },
+    "bread": {
+      "surface": "food",
+      "hidden": "money",
+      "context_keywords": ["get", "make", "chase", "stack", "dough"]
+    },
+    "paper": {
+      "surface": "material",
+      "hidden": "money",
+      "context_keywords": ["chase", "get", "long", "stack", "count"]
+    },
+    "cake": {
+      "surface": "dessert",
+      "hidden": "money/drugs",
+      "context_keywords": ["get", "make", "flip", "bake", "slice"]
+    },
+    "cheese": {
+      "surface": "dairy product",
+      "hidden": "money",
+      "context_keywords": ["cheddar", "get", "make", "stack", "government"]
+    },
+    "bands": {
+      "surface": "music groups",
+      "hidden": "money (thousand dollar stacks)",
+      "context_keywords": ["rubber", "count", "stack", "make", "hundred"]
+    },
+    "stacks": {
+      "surface": "piles",
+      "hidden": "money",
+      "context_keywords": ["count", "make", "tall", "on", "blue"]
+    },
+    "whip": {
+      "surface": "lash",
+      "hidden": "car",
+      "context_keywords": ["foreign", "new", "push", "drive", "coupe"]
+    },
+    "drip": {
+      "surface": "liquid falling",
+      "hidden": "style/fashion/jewelry",
+      "context_keywords": ["ice", "sauce", "fit", "too", "much"]
+    },
+    "sauce": {
+      "surface": "condiment",
+      "hidden": "style/swagger",
+      "context_keywords": ["drip", "got", "too", "much", "lost"]
+    },
+    "fresh": {
+      "surface": "new/clean",
+      "hidden": "stylish",
+      "context_keywords": ["so", "stay", "outfit", "kicks", "fit"]
+    },
+    "cold": {
+      "surface": "low temperature",
+      "hidden": "ruthless/stylish",
+      "context_keywords": ["so", "ice", "heart", "world", "blooded"]
+    },
+    "sick": {
+      "surface": "ill",
+      "hidden": "excellent",
+      "context_keywords": ["so", "that's", "flow", "beat", "verse"]
+    },
+    "dirty": {
+      "surface": "unclean",
+      "hidden": "raw/authentic/illegal",
+      "context_keywords": ["south", "money", "game", "play", "work"]
+    },
+    "trap": {
+      "surface": "snare",
+      "hidden": "drug house/genre",
+      "context_keywords": ["house", "music", "work", "out", "star"]
+    },
+    "plug": {
+      "surface": "stopper",
+      "hidden": "drug supplier",
+      "context_keywords": ["connect", "got", "the", "call", "hit"]
+    }
+  },
+  "domain_keywords": {
+    "romance": [
+      "love", "baby", "girl", "boy", "heart", "night", "bed", "body",
+      "touch", "kiss", "feel", "want", "need", "desire", "sweet",
+      "lips", "skin", "close", "hold", "dream"
+    ],
+    "substance": [
+      "party", "night", "smoke", "drink", "feel", "high", "trip",
+      "roll", "chill", "vibe", "zone", "fade", "cloud", "float"
+    ],
+    "music_street": [
+      "rap", "flow", "bars", "beat", "mic", "rhyme", "verse", "hook",
+      "track", "studio", "record", "street", "hood", "gang", "crew",
+      "money", "cash", "rich", "broke", "hustle", "grind", "real",
+      "fake", "game", "play", "win", "lose"
+    ]
+  }
+}

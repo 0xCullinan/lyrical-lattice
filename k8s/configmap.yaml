@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oronym-config
+data:
+  log-level: "INFO"
+  environment: "production"
+  rate-limit-per-minute: "100"
+  cache-ttl-seconds: "3600"
+  beam-width: "10"
+  max-phoneme-sequence-length: "100"
+  max-file-size-mb: "10"
+  cors-origins: "https://app.example.com"

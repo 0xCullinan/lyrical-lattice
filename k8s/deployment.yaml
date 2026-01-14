@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oronym-api
+  labels:
+    app: oronym-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: oronym-api
+  template:
+    metadata:
+      labels:
+        app: oronym-api
+    spec:
+      containers:
+        - name: oronym-api
+          image: oronym-assistant:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: oronym-secrets
+                  key: database-url
+            - name: REDIS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: oronym-secrets
+                  key: redis-url
+            - name: LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                  name: oronym-config
+                  key: log-level
+            - name: ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: oronym-config
+                  key: environment
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+          livenessProbe:
+            httpGet:
+              path: /api/v1/health
+              port: 8000
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /api/v1/health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          volumeMounts:
+            - name: data-volume
+              mountPath: /app/data
+      volumes:
+        - name: data-volume
+          persistentVolumeClaim:
+            claimName: oronym-data-pvc

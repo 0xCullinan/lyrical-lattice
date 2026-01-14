@@ -1,0 +1,53 @@
+{
+  "animal_sounds": [
+    "buzz", "hiss", "meow", "woof", "chirp", "roar", "growl",
+    "moo", "oink", "quack", "bark", "purr", "howl", "squeak",
+    "neigh", "bleat", "crow", "caw", "hoot", "tweet", "peep",
+    "ribbit", "croak", "snarl", "yelp", "yap", "yowl"
+  ],
+  "impact_sounds": [
+    "bang", "crash", "thud", "smash", "crack", "pop", "snap",
+    "boom", "thump", "clang", "clatter", "crunch", "slam",
+    "bash", "bam", "whack", "thwack", "smack", "slap", "punch",
+    "clunk", "bonk", "knock", "tap", "rap", "pound", "wallop"
+  ],
+  "water_sounds": [
+    "splash", "drip", "gurgle", "slosh", "whoosh", "swoosh",
+    "splatter", "gush", "trickle", "bubble", "plop", "plunk",
+    "splish", "drizzle", "spray", "squirt", "geyser", "pour",
+    "ripple", "lap", "slurp", "gulp", "glug"
+  ],
+  "voice_sounds": [
+    "whisper", "murmur", "giggle", "groan", "sigh", "gasp",
+    "shriek", "scream", "mumble", "grunt", "snore", "cough",
+    "hiccup", "sneeze", "sniff", "snort", "wheeze", "pant",
+    "huff", "puff", "chuckle", "cackle", "guffaw", "sob",
+    "wail", "moan", "whimper", "hum", "yell", "shout"
+  ],
+  "mechanical_sounds": [
+    "beep", "click", "buzz", "whir", "zoom", "vroom", "honk",
+    "screech", "squeal", "rattle", "clunk", "ding", "ring",
+    "tick", "tock", "chime", "jingle", "clang", "hum", "drone",
+    "rev", "sputter", "chug", "purr", "rumble", "roar"
+  ],
+  "nature_sounds": [
+    "rustle", "crackle", "swish", "whoosh", "howl", "whistle",
+    "thunder", "patter", "splatter", "crash", "roar", "rumble",
+    "boom", "creak", "snap", "crack"
+  ],
+  "action_sounds": [
+    "pow", "zap", "zing", "fizz", "sizzle", "crackle",
+    "pop", "ping", "pong", "zip", "zoom", "whiz",
+    "swoosh", "swish", "thunk", "plop", "splat"
+  ],
+  "eating_sounds": [
+    "chomp", "munch", "crunch", "slurp", "gulp", "burp",
+    "chew", "gobble", "nibble", "gnaw", "bite", "sip"
+  ],
+  "patterns": {
+    "sibilant_end": ["hiss", "buzz", "fizz", "whiz", "jazz"],
+    "plosive_start": ["bang", "boom", "pop", "pow", "ping", "pong"],
+    "nasal_vibrant": ["murmur", "hum", "mumble"],
+    "liquid_flow": ["gurgle", "burble", "bubble", "ripple"]
+  }
+}

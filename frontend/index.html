@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LyricalLattice — Wordplay Discovery Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="background-effects" aria-hidden="true">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="logo-section">
+                <h1 class="logo">LyricalLattice</h1>
+                <p class="tagline">Make the invisible music of language visible</p>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls-bar">
+                <div class="control-group">
+                    <label for="dialectSelector" class="control-label">Dialect</label>
+                    <select id="dialectSelector" class="control-select" aria-label="Select dialect">
+                        <option value="en-US">en-US</option>
+                        <option value="en-GB">en-GB</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="toleranceSlider" class="control-label">
+                        Tolerance: <span id="toleranceValue">0.9</span>
+                    </label>
+                    <input type="range" id="toleranceSlider" min="0.5" max="1.0" step="0.05" value="0.9"
+                           class="control-slider" aria-label="Phonetic similarity tolerance">
+                </div>
+
+                <div class="control-group">
+                    <label for="genreSelector" class="control-label">Genre</label>
+                    <select id="genreSelector" class="control-select" aria-label="Select genre context">
+                        <option value="general">General</option>
+                        <option value="hip-hop">Hip-Hop</option>
+                        <option value="poetry">Poetry</option>
+                        <option value="pop">Pop</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content" role="main">
+            <!-- Search Section -->
+            <section class="search-section" aria-label="Search input">
+                <div class="search-container">
+                    <input type="text"
+                           id="searchInput"
+                           class="search-input"
+                           placeholder="Enter a phrase to analyze (e.g., 'ice cream', 'I scream')..."
+                           autocomplete="off"
+                           aria-label="Enter phrase to analyze">
+                    <button id="analyzeBtn" class="analyze-btn" aria-label="Analyze phrase">
+                        <span class="btn-text">Analyze</span>
+                        <span class="btn-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Phoneme Display -->
+                <div id="phonemeDisplay" class="phoneme-display hidden" aria-live="polite">
+                    <span class="phoneme-label">Phonemes:</span>
+                    <span id="phonemeOutput" class="phoneme-output"></span>
+                </div>
+            </section>
+
+            <!-- Pattern Tabs (21 Device Filters) -->
+            <nav class="pattern-tabs" role="tablist" aria-label="Wordplay device filters">
+                <div class="tab-group">
+                    <span class="tab-group-label">All</span>
+                    <button class="tab-btn active" data-category="all" role="tab" aria-selected="true">All</button>
+                </div>
+
+                <div class="tab-group">
+                    <span class="tab-group-label">Phonetic</span>
+                    <button class="tab-btn" data-device="homophone" role="tab">Homophones</button>
+                    <button class="tab-btn" data-device="oronym" role="tab">Oronyms</button>
+                    <button class="tab-btn" data-device="perfect_rhyme" role="tab">Perfect Rhyme</button>
+                    <button class="tab-btn" data-device="slant_rhyme" role="tab">Slant Rhyme</button>
+                    <button class="tab-btn" data-device="assonance" role="tab">Assonance</button>
+                    <button class="tab-btn" data-device="consonance" role="tab">Consonance</button>
+                    <button class="tab-btn" data-device="alliteration" role="tab">Alliteration</button>
+                    <button class="tab-btn" data-device="internal_rhyme" role="tab">Internal Rhyme</button>
+                    <button class="tab-btn" data-device="multisyllabic_rhyme" role="tab">Multisyllabic</button>
+                    <button class="tab-btn" data-device="compound_rhyme" role="tab">Compound</button>
+                    <button class="tab-btn" data-device="onomatopoeia" role="tab">Onomatopoeia</button>
+                    <button class="tab-btn" data-device="euphony" role="tab">Euphony</button>
+                    <button class="tab-btn" data-device="stacked_rhyme" role="tab">Stacked</button>
+                </div>
+
+                <div class="tab-group">
+                    <span class="tab-group-label">Semantic</span>
+                    <button class="tab-btn" data-device="pun" role="tab">Puns</button>
+                    <button class="tab-btn" data-device="double_entendre" role="tab">Double Entendre</button>
+                    <button class="tab-btn" data-device="malapropism" role="tab">Malapropism</button>
+                    <button class="tab-btn" data-device="mondegreen" role="tab">Mondegreen</button>
+                </div>
+
+                <div class="tab-group">
+                    <span class="tab-group-label">Music</span>
+                    <button class="tab-btn" data-device="polyrhythmic_rhyme" role="tab">Polyrhythmic</button>
+                    <button class="tab-btn" data-device="breath_rhyme" role="tab">Breath Rhyme</button>
+                    <button class="tab-btn" data-device="melisma" role="tab">Melisma</button>
+                    <button class="tab-btn" data-device="sample_flip" role="tab">Sample Flip</button>
+                </div>
+            </nav>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state hidden" aria-live="polite" aria-busy="true">
+                <div class="spinner" aria-hidden="true"></div>
+                <p class="loading-text">Analyzing phonetic patterns...</p>
+            </div>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden" aria-label="Analysis results">
+                <!-- Summary Card -->
+                <div class="summary-card">
+                    <div class="summary-header">
+                        <h2 class="summary-title">Analysis Results</h2>
+                        <span id="processingTime" class="processing-time"></span>
+                    </div>
+                    <div class="summary-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalMatches">0</span>
+                            <span class="stat-label">Matches</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="deviceCount">0</span>
+                            <span class="stat-label">Device Types</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Grid -->
+                <div id="resultsGrid" class="results-grid" role="list" aria-label="Wordplay matches">
+                    <!-- Match items will be injected here -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state hidden">
+                    <p class="empty-text">No wordplay patterns detected.</p>
+                    <p class="empty-hint">Try a different phrase or adjust the tolerance slider.</p>
+                </div>
+            </section>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-state hidden" role="alert">
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <p class="footer-text">LyricalLattice v1.0 — Powered by 21 wordplay detectors</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

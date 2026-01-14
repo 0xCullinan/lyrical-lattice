@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16.2
+    container_name: oronym-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: oronym_db
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache
+  redis:
+    image: redis:7.2.4-alpine
+    container_name: oronym-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Oronym API Application
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: oronym-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:password@postgres:5432/oronym_db
+      - REDIS_URL=redis://redis:6379/0
+      - MODEL_DIR=/app/data/models
+      - CORPUS_DIR=/app/data/corpus
+      - INDEX_DIR=/app/data/indices
+      - UPLOAD_DIR=/tmp/audio
+      - LOG_LEVEL=INFO
+      - ENVIRONMENT=development
+      - CORS_ORIGINS=http://localhost:3000,http://localhost:8080
+      - RATE_LIMIT_PER_MINUTE=100
+      - MAX_FILE_SIZE_MB=10
+      - CACHE_TTL_SECONDS=3600
+      - BEAM_WIDTH=10
+      - MAX_PHONEME_SEQUENCE_LENGTH=100
+    volumes:
+      - ./data:/app/data
+      - upload_data:/tmp/audio
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  postgres_data:
+  redis_data:
+  upload_data:
+
+networks:
+  default:
+    name: oronym-network
