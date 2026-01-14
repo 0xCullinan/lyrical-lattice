@@ -6,7 +6,7 @@ Start the FastAPI development server with hot reload.
 
 1. Start the server:
    ```bash
-   cd /Users/macbook/.gemini/antigravity/scratch/oronym-assistant && uvicorn src.api.main:app --reload --port 8000
+   uvicorn src.api.main:app --reload --port 8000
    ```
 
 2. Server will be available at:

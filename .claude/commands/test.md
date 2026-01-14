@@ -6,7 +6,7 @@ Run the project test suite and fix any failures.
 
 1. Run pytest with verbose output:
    ```bash
-   cd /Users/macbook/.gemini/antigravity/scratch/oronym-assistant && pytest -v
+   pytest -v
    ```
 
 2. If tests fail:
