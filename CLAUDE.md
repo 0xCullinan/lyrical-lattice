@@ -114,4 +114,21 @@ python scripts/build_indices.py
 ```
 
 ---
+
+## Learnings (Compounding Engineering)
+
+> Add entries here whenever Claude makes a mistake. This helps Claude learn and avoid repeating errors.
+
+### Format
+```
+### YYYY-MM-DD
+- **Issue**: What went wrong
+- **Fix**: What Claude should do instead
+```
+
+### Log
+
+*(No entries yet - add mistakes here as they occur)*
+
+---
 *Last updated: January 2026*
